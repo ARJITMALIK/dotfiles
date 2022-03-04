@@ -1,0 +1,257 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #555  
+primary = #e600ff 
+secondary = #e60053
+alert = #bd2c40
+terminal = #00aaff
+browser = #ff006f 
+files = #ffe100
+chat = #a200ff
+green = #0dff00
+
+
+[bar/mainbar]
+monitor = ${env:MONITOR:eDP}
+bottom = true
+width = 100%
+height = 30
+radius = 0.0
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = JetBrainsMonoMedium Nerd Font:style=Bold:size=14;4
+font-1 = Font Awesome 6 Brands:size=14;4
+
+modules-left = i3
+modules-center = spotify
+modules-right = filesystem xbacklight pulseaudio wlan eth battery date 
+
+tray-position = right
+tray-padding = 2
+tray-background = #0063ff
+
+
+[bar/altbar]
+monitor = ${env:MONITOR:HDMI-1-0}
+bottom = true
+width = 100%
+height = 30
+radius = 0.0
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+border-size = 0
+border-color = #00000000
+padding-left = 0
+padding-right = 1
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = JetBrainsMonoMedium Nerd Font:style=Bold:size=14;4
+font-1 = Font Awesome 6 Brands:size=14;4
+
+modules-left = i3
+modules-center = 
+modules-right = pulseaudio wlan eth battery date 
+wm-restack = i3
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted =  %free%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = true
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+ws-icon-0 = 1; 
+ws-icon-1 = 2;
+ws-icon-2 = 3; 
+ws-icon-3 = 4; 
+ws-icon-4 = 5; 
+ws-icon-5 = 6; 
+ws-icon-6 = 7;烙
+ws-icon-7 = 8;
+ws-icon-8 = 9; 
+ws-icon-9 = 10;  
+ws-icon-default = 
+
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.green}
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = 1
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %icon%
+label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.alert}
+label-urgent-padding = 1
+
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python /home/arjit/.config/polybar/script/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
+;control players (optional)
+click-left = playerctl --player=spotify play-pause 
+click-right = playerctl --player=spotify next 
+click-middle = playerctl --player=spotify previous
+
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected =   <label-connected>
+format-connected-prefix = %{A1:nm-connection-editor:}   %{A}
+label-connected =   %downspeed% %upspeed%
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %{A1:nm-connection-editor:}   %{A}
+label-disconnected-foreground = ${colors.browser}
+
+
+[module/eth]
+type = internal/network
+interface = enp3s0
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+[module/date]
+type = internal/date
+interval = 1
+date = "%a %d"
+time = %I:%M %p
+time-alt = %I:%M
+label = %date% %time%
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+use-ui-max = true
+interval = 1
+
+format-volume = <ramp-volume> <label-volume>
+label-muted = 婢 muted
+label-muted-foreground = #666
+
+ramp-volume-0 = 奔
+ramp-volume-1 = 墳
+ramp-volume-2 = 
+
+; Right and Middle click
+click-right = pavucontrol
+; click-middle = 
+
+
+[module/battery]
+type = internal/battery
+full-at = 98
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ADP1
+poll-interval = 5
+time-format = %H:%M
+format-charging = <animation-charging>  <label-charging>
+format-discharging = <ramp-capacity>  <label-discharging>
+label-charging =   %percentage%%
+label-discharging =   %percentage%%
+label-full =  Charged 
+label-full-foreground = ${colors.green}
+ramp-capacity-0 =   
+ramp-capacity-0-foreground = ${colors.alert}
+ramp-capacity-1 =   
+ramp-capacity-2 =   
+ramp-capacity-3 =   
+ramp-capacity-4 =   
+
+bar-capacity-width = 10
+animation-charging-0 =   
+animation-charging-1 =   
+animation-charging-2 =   
+animation-charging-3 =   
+animation-charging-4 =   
+animation-charging-framerate = 750
+
+animation-discharging-0 =   
+animation-discharging-1 =   
+animation-discharging-2 =   
+animation-discharging-3 =   
+animation-discharging-4 =   
+animation-discharging-framerate = 500
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
