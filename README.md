@@ -1,13 +1,12 @@
 # Arjit's Dotfiles
 ## Table of contents
-<ul>
-  <li>What the heck are dotfiles??</li>
-  <li>Requirements</li>
-  <li>How to get em all!!??</li>
-  <li>Credits</li>
-</ul>
 
-## What the heck are dotfiles??
+- [What the heck are dotfiles ??](#what-the-heck-are-dotfiles-??)
+- [Requirements](#requirements)
+- How to get em all!!??
+- Credits
+
+## What the heck are dotfiles ??
 ![Whole desktop capture](/captures/whole_desktop.png "Desktop")
 <br>
 <br>
