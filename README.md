@@ -22,6 +22,9 @@ Dotfiles are the customised configurations of some softwares, installed on your 
 - ```nitrogen``` (Wallpaper)
 - ```rofi``` (application menu)
 - ```picom``` (compositor)
+- ```nm-applet``` (for network management)
+- ```pulseaudio``` (for audio)
+- ```gnome-polkit``` (authentication manager)
 
 > NOTE : Use compton if you are **NOT** on an arch based distribution (Ubuntu, Debian, etc)
 
