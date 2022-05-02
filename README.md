@@ -19,7 +19,7 @@ Dotfiles are the customised configurations of some softwares, installed on your 
 <br>
 ## Requirements
 - ```git``` (version control system)
-- ```neovim 0.6+``` (Text editor)
+- ```neovim 0.7+``` (Text editor)
 - ```Nerd Fonts``` (I have used JetBrains Nerd Fonts)
 - ```dunst``` (notifications)
 - ```polybar``` (Status bar)
