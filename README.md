@@ -27,6 +27,7 @@ Dotfiles are the customised configurations of some softwares, installed on your 
 - ```kitty``` (Terminal emulator)
 - ```nitrogen``` (Wallpaper)
 - ```rofi``` (application menu)
+- ```xclip``` (clipboard manager)
 - ```picom``` (compositor)
 - ```nm-applet``` (for network management)
 - ```pulseaudio``` (for audio)
