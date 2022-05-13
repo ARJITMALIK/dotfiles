@@ -50,7 +50,7 @@ font-1 = Font Awesome 6 Brands:size=14;4
 
 modules-left = i3
 modules-center = spotify
-modules-right = filesystem xbacklight pulseaudio wlan eth battery date 
+modules-right = powerprofile filesystem xbacklight pulseaudio wlan eth battery date 
 
 tray-position = right
 tray-padding = 2
@@ -154,6 +154,10 @@ click-left = playerctl --player=spotify play-pause
 click-right = playerctl --player=spotify next 
 click-middle = playerctl --player=spotify previous
 
+[module/powerprofile]
+type = custom/script
+interval = 1
+exec = /home/arjit/.config/polybar/script/ppd-status
 
 [module/wlan]
 type = internal/network
@@ -161,8 +165,8 @@ interface = wlan0
 interval = 3.0
 
 format-connected =   <label-connected>
-format-connected-prefix = %{A1:nm-connection-editor:}   %{A}
-label-connected =   %downspeed% %upspeed%
+format-connected-margin = 0px
+label-connected =%downspeed:7:7% %upspeed:7:7%
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %{A1:nm-connection-editor:}   %{A}
@@ -205,6 +209,7 @@ format-volume = <ramp-volume> <label-volume>
 label-muted = 婢 muted
 label-muted-foreground = #666
 
+label-volume = %percentage:3:3%%
 ramp-volume-0 = 奔
 ramp-volume-1 = 墳
 ramp-volume-2 = 
