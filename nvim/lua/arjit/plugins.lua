@@ -99,6 +99,14 @@ return packer.startup(function(use)
         require'alpha'.setup(require'alpha.themes.startify'.config)
       end
     }
+    
+    -- colorizer
+    use {
+      'norcalli/nvim-colorizer.lua',
+      config = function ()
+        require 'colorizer'.setup()
+      end
+    }
 
   if packer_bootstrap then
     require('packer').sync()

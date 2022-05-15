@@ -1,8 +1,8 @@
 -- colorscheme
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme gruvbox]])
 
 -- I know that's odd but yeah First of All, I want my background transluceeeeent!! So deal with it
--- vim.cmd([[highlight Normal guibg=none]])
+vim.cmd([[highlight Normal guibg=none]])
 
 -- lua files
 require("arjit.keymaps")

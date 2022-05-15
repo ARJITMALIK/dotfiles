@@ -25,7 +25,7 @@ v.backup = false
 v.timeoutlen = 500
 v.shortmess:append "c"
 v.cursorline = true
-v.mouse = "a"
+-- v.mouse = "a"
 v.showmode = false
 v.autoread = true
 -- vim.opt.foldmethod = "expr"
