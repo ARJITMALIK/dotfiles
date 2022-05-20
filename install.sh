@@ -1,13 +1,14 @@
 !#!/bin/bash
 
-sudo pacman -Syu tree-sitter luajit xclip kitty polybar okular zsh discord brightnessctl yarn nodejs npm ranger tmux exa
+sudo pacman -Syu tree-sitter luajit xclip kitty polybar okular zsh discord brightnessctl yarn nodejs npm ranger tmux exa screenkey
 chsh -s $(which zsh)
 
 yay brave-bin
+yay wine
 yay nerd-fonts-jetbrains-mono
 yay ttf-font-awesome
-yay batsignal 
-yay spotify 
+yay batsignal
+yay spotify
 yay spotify-adblock-git
 yay notion-app
 yay cava
