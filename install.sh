@@ -16,6 +16,9 @@ yay gtop
 yay nvidia-prime
 yay neovim-nightly-bin
 
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 mkdir -p /run/media/arjit/CODE/
 mkdir -p /run/media/arjit/DOWNLOADS/
 mkdir -p /run/media/arjit/MISC/
