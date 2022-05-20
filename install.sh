@@ -24,9 +24,9 @@ mkdir -p /run/media/arjit/DOWNLOADS/
 mkdir -p /run/media/arjit/MISC/
 mkdir -p /run/media/arjit/FILES/
 
-cp kitty/ ~/.config/
-cp i3/ ~/.config/
-cp dunst/ ~/.config/
-cp nvim/ ~/.config/
-cp polybar/ ~/.config/
-cp rofi/ ~/.config/
+sudo cp kitty/ ~/.config/
+sudo cp i3/ ~/.config/
+sudo cp dunst/ ~/.config/
+sudo cp nvim/ ~/.config/
+sudo cp polybar/ ~/.config/
+sudo cp rofi/ ~/.config/
