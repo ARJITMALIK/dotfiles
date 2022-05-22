@@ -41,6 +41,8 @@ cd ..
 
 sudo cp picom.conf ~/.config/
 
+sudo cp .screenlayout/ ~/
+
 sudo cp -r kitty/ ~/.config/
 sudo cp -r i3/ ~/.config/
 sudo cp -r dunst/ ~/.config/
