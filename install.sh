@@ -15,6 +15,7 @@ yay cava
 yay gtop
 yay nvidia-prime
 yay neovim-nightly-bin
+yay  gnome-keyring
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
