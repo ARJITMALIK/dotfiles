@@ -19,10 +19,19 @@ yay neovim-nightly-bin
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 mkdir -p /run/media/arjit/CODE/
 mkdir -p /run/media/arjit/DOWNLOADS/
 mkdir -p /run/media/arjit/MISC/
 mkdir -p /run/media/arjit/FILES/
+
+cd polybar
+chmod +x launch.sh
+cd script
+chmod +x ppd-status
+chmod +x spotify_status.py
+cd ../..
 
 sudo cp -r kitty/ ~/.config/
 sudo cp -r i3/ ~/.config/
