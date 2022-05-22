@@ -39,6 +39,8 @@ sudo cp .zshrc ~/
 sudo cp .zshrc.pre-oh-my-zsh
 cd ..
 
+sudo cp picom.conf ~/.config/
+
 sudo cp -r kitty/ ~/.config/
 sudo cp -r i3/ ~/.config/
 sudo cp -r dunst/ ~/.config/
