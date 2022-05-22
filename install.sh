@@ -33,6 +33,12 @@ chmod +x ppd-status
 chmod +x spotify_status.py
 cd ../..
 
+cd zsh
+sudo cp agnoster.zsh-theme ~/.oh-my-zsh/themes/
+sudo cp .zshrc ~/
+sudo cp .zshrc.pre-oh-my-zsh
+cd ..
+
 sudo cp -r kitty/ ~/.config/
 sudo cp -r i3/ ~/.config/
 sudo cp -r dunst/ ~/.config/
