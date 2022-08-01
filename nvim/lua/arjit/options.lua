@@ -6,6 +6,7 @@ v.clipboard =  "unnamedplus"
 v.shiftwidth = 2
 v.expandtab = true
 v.smartindent = true
+v.autoindent = true
 v.smartcase = true
 v.nu = true
 v.relativenumber = true

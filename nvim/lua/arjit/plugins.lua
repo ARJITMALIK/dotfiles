@@ -38,6 +38,8 @@ return packer.startup(function(use)
     -- colorscheme
     use "gruvbox-community/gruvbox"
     use 'folke/tokyonight.nvim'
+    use 'tanvirtin/monokai.nvim'
+    use 'navarasu/onedark.nvim'
 
     -- LSP stuff
     use 'hrsh7th/nvim-cmp'
@@ -52,6 +54,7 @@ return packer.startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use "saadparwaiz1/cmp_luasnip"
     use "hrsh7th/cmp-nvim-lua"
+    use "dcampos/cmp-snippy"
 
     -- tree-sitter
     use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
@@ -69,6 +72,7 @@ return packer.startup(function(use)
     -- snippet engine
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
+    use "dcampos/nvim-snippy"
 
     -- autopairs
     use "windwp/nvim-autopairs"

@@ -52,10 +52,14 @@ sudo cp -r polybar/ ~/.config/
 sudo cp -r rofi/ ~/.config/
 sudo cp -r Kvantum/ ~/.config/
 sudo cp -r nitrogen/ ~/.config/
+sudo cp ./greenclip.toml ~/.config/
 cd && cd Pictures/
 git clone https://github.com/ARJITMALIK/Wallpapers.git
 
-sudo cp fstab /etc/
+if id -u "arjit" >/dev/null 2>&1; then
+    sudo cp fstab /etc/
+fi
+
 echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 cd
 cd /etc/

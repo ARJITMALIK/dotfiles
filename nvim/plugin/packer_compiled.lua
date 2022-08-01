@@ -110,6 +110,11 @@ _G.packer_plugins = {
     path = "/home/arjit/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-snippy"] = {
+    loaded = true,
+    path = "/home/arjit/.local/share/nvim/site/pack/packer/start/cmp-snippy",
+    url = "https://github.com/dcampos/cmp-snippy"
+  },
   ["cmp-tabnine"] = {
     loaded = true,
     path = "/home/arjit/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
@@ -139,6 +144,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/arjit/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["monokai.nvim"] = {
+    loaded = true,
+    path = "/home/arjit/.local/share/nvim/site/pack/packer/start/monokai.nvim",
+    url = "https://github.com/tanvirtin/monokai.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -171,6 +181,11 @@ _G.packer_plugins = {
     path = "/home/arjit/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-snippy"] = {
+    loaded = true,
+    path = "/home/arjit/.local/share/nvim/site/pack/packer/start/nvim-snippy",
+    url = "https://github.com/dcampos/nvim-snippy"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/arjit/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -190,6 +205,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/arjit/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/arjit/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

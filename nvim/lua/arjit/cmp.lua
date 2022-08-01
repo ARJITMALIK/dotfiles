@@ -10,6 +10,7 @@ end
 
 
 require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/"})
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -45,11 +46,17 @@ local kind_icons = {
   TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
-
+-- require 'cmp'.setup {
+--   snippet = {
+--     expand = function(args)
+--       require 'snippy'.expand_snippet(args.body)
+--     end
+--   },
 cmp.setup {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
+      require 'snippy'.expand_snippet(args.body)
     end,
   },
   mapping = {
@@ -102,10 +109,10 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
+        luasnip = "[Snippet]",
         cmp_tabnine = "[Tabnine]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[Nvim Lua]",
-        luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -113,10 +120,11 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = "snippy" },
+    { name = "luasnip" },
     { name = "cmp_tabnine" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
     -- order matters
@@ -132,7 +140,6 @@ cmp.setup {
   },
   experimental = {
     ghost_text = false,
-    native_menu = false,
   },
 }
 

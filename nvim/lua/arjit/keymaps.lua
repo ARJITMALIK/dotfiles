@@ -79,7 +79,7 @@ k('n', '<leader>rn', ':lua vim.lsp.buf.rename()<cr>', opts)
 k('n', 'gl', '<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "single" })<CR>', opts)
 k('n', '<leader>a', "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", opts)
 k('n', '<leader>g', "<cmd>lua require('telescope.builtin').diagnostics()<cr>", opts)
-k('n', '<C-f>', ":lua vim.lsp.buf.formatting_sync()<cr>", opts)
+k('n', '<C-f>', ":lua vim.lsp.buf.format()<cr>", opts)
 
 
 -- Telescope keymaps

@@ -13,6 +13,7 @@
 
 [colors]
 background = #222
+bg-transparent = #662F343F
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555  
@@ -50,7 +51,7 @@ font-1 = Font Awesome 6 Brands:size=14;4
 
 modules-left = i3
 modules-center = spotify
-modules-right = powerprofile filesystem xbacklight pulseaudio wlan eth battery date 
+modules-right = powerprofile wlan pulseaudio  eth battery date 
 
 tray-position = right
 tray-padding = 2
