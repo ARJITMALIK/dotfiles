@@ -1,0 +1,6 @@
+pane	mergesort	0	1	:*	0	:/run/media/arjit/CODE/cpp/algos	1	nvim	:nvim mergeSort.cpp
+pane	mergesort	0	1	:*	1	:/run/media/arjit/CODE/cpp/algos	0	zsh	:
+pane	mergesort	1	0	:-	0	:/home/arjit	1	nvim	:nvim .tmux.conf
+window	mergesort	0	:neovim	1	:*	5e06,174x45,0,0{87x45,0,0,0,86x45,88,0,2}	off
+window	mergesort	1	:nvim	0	:-	c243,174x45,0,0,6	:
+state	mergesort	

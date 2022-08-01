@@ -1,0 +1,4 @@
+pane	0	0	1	:*	0	:/home/arjit	0	zsh	:
+pane	0	0	1	:*	1	:/home/arjit	1	zsh	:
+window	0	0	:zsh	1	:*	1d67,192x51,0,0{96x51,0,0,0,95x51,97,0,1}	:
+state	0	

@@ -1,0 +1,4 @@
+pane	0	0	1	:*	0	:/run/media/arjit/CODE/python	1	nvim	:nvim conv.py
+pane	0	0	1	:*	1	:/run/media/arjit/CODE/python	0	zsh	:
+window	0	0	:nvim	1	:*	cd01,174x44,0,0{87x44,0,0,0,86x44,88,0,1}	:
+state	0	

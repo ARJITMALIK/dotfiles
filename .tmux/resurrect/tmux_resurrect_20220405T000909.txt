@@ -1,0 +1,11 @@
+pane	algo-vis	0	0	:-	0	:/run/media/arjit/CODE/projects/sorting-visualiser/sortit	1	npm	:npm start
+pane	algo-vis	1	1	:*	0	:/run/media/arjit/CODE/projects/sorting-visualiser/sortit	1	nvim	:nvim .
+pane	algo-vis	2	0	:	0	:/run/media/arjit/CODE/test	1	nvim	:nvim .
+pane	algo-vis	3	0	:	0	:/run/media/arjit/CODE/test	1	zsh	:
+pane	nvim-conf	0	1	:*	0	:/home/arjit/.config/nvim	1	zsh	:
+window	algo-vis	0	:npm	0	:-	b3bd,192x51,0,0,0	:
+window	algo-vis	1	:neovim	1	:*	b3be,192x51,0,0,1	off
+window	algo-vis	2	:nvim	0	:	b3bf,192x51,0,0,2	:
+window	algo-vis	3	:node	0	:	b3c0,192x51,0,0,3	off
+window	nvim-conf	0	:zsh	1	:*	b3c5,192x51,0,0,8	:
+state	algo-vis	

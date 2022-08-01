@@ -1,0 +1,4 @@
+pane	mergesort	0	1	:*	0	:/run/media/arjit/CODE/cpp/algos	1	nvim	:nvim mergeSort.cpp
+pane	mergesort	0	1	:*	1	:/run/media/arjit/CODE/cpp/algos	0	zsh	:
+window	mergesort	0	:neovim	1	:*	5e06,174x45,0,0{87x45,0,0,0,86x45,88,0,2}	off
+state	mergesort	

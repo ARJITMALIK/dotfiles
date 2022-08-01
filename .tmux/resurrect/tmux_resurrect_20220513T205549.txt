@@ -1,0 +1,5 @@
+pane	0	0	1	:*	0	:/run/media/arjit/CODE/js30/jsthirty/06-ajax-types	1	nvim	:nvim ajax-head.js
+pane	0	1	0	:-	0	:/run/media/arjit/CODE/js30/jsthirty/06-ajax-types	1	node	:node /usr/bin/live-server
+window	0	0	:nvim	1	:*	b3bf,192x51,0,0,2	:
+window	0	1	:node	0	:-	b3be,192x51,0,0,1	:
+state	0	

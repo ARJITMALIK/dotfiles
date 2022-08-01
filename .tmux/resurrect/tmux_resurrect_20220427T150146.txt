@@ -1,0 +1,4 @@
+pane	0	0	1	:*	0	:/run/media/arjit/CODE/python	1	nvim	:nvim escapeseq.py
+pane	0	0	1	:*	1	:/run/media/arjit/CODE/python	0	zsh	:
+window	0	0	:nvim	1	:*	1d67,192x51,0,0{96x51,0,0,0,95x51,97,0,1}	:
+state	0	
