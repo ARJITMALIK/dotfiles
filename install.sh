@@ -1,10 +1,9 @@
 !#!/bin/bash
 
-sudo pacman -Syu tree-sitter luajit xclip kitty polybar okular zsh discord brightnessctl yarn nodejs npm ranger tmux exa screenkey
+sudo pacman -Syu tree-sitter luajit xclip kitty polybar okular zsh discord brightnessctl yarn nodejs npm ranger tmux exa neovim spectacle kvantum
 chsh -s $(which zsh)
 
 yay brave-bin
-yay wine
 yay nerd-fonts-jetbrains-mono
 yay ttf-font-awesome
 yay batsignal
@@ -14,18 +13,19 @@ yay notion-app
 yay cava
 yay gtop
 yay nvidia-prime
-yay neovim-nightly-bin
-yay  gnome-keyring
+yay gnome-keyring
+yay fd
+yay rofi-greenclip
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-mkdir -p /run/media/arjit/CODE/
-mkdir -p /run/media/arjit/DOWNLOADS/
-mkdir -p /run/media/arjit/MISC/
-mkdir -p /run/media/arjit/FILES/
+sudo mkdir -p /run/media/arjit/CODE/
+sudo mkdir -p /run/media/arjit/DOWNLOADS/
+sudo mkdir -p /run/media/arjit/MISC/
+sudo mkdir -p /run/media/arjit/FILES/
 
 cd polybar
 chmod +x launch.sh
@@ -50,3 +50,15 @@ sudo cp -r dunst/ ~/.config/
 sudo cp -r nvim/ ~/.config/
 sudo cp -r polybar/ ~/.config/
 sudo cp -r rofi/ ~/.config/
+sudo cp -r Kvantum/ ~/.config/
+sudo cp -r nitrogen/ ~/.config/
+cd && cd Pictures/
+git clone https://github.com/ARJITMALIK/Wallpapers.git
+
+sudo cp fstab /etc/
+echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
+cd
+cd /etc/
+sudo echo "QT_STYLE_OVERRIDE=kvantum"
+
+echo "Dont forget to configure your ssh, and have a good time biromdir."
