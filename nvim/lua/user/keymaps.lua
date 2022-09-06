@@ -13,11 +13,9 @@ k("n", "<leader>c", ":bd<CR>", opts)
 
 k("i", "<Left>", "<ESC>:bp<CR>", opts)
 k("i", "<Right>", "<ESC>:bn<CR>", opts)
-k("i", "<leader>c", "<ESC>:bd<CR>", opts)
 
 k("v", "<Left>", "<ESC>:bp<CR>", opts)
 k("v", "<Right>", "<ESC>:bn<CR>", opts)
-k("v", "<leader>c", "<ESC>:bd<CR>", opts)
 
 
 k("n", "<Up>", ":echo 'Nah nah nah Bro!! dont use that'<CR>", opts)
