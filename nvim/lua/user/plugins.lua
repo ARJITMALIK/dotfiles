@@ -43,14 +43,6 @@ return packer.startup(function(use)
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     
-    -- file explorer
-    use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      }
-    }
-
     -- completions and intellisense
     use {'neoclide/coc.nvim', branch = 'release'}
 
@@ -86,7 +78,7 @@ return packer.startup(function(use)
 
     -- autopairs
     use 'jiangmiao/auto-pairs'
-
+    
   if packer_bootstrap then
     require('packer').sync()
   end

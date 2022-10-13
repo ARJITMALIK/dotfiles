@@ -1,0 +1,1 @@
+{"description": "Tools for competitive programming for Sublime Text 3 & 4", "sublime_text": ">=3092", "version": "1.4.12", "platforms": ["*"], "url": "https://github.com/Jatana/FastOlympicCoding", "dependencies": []}

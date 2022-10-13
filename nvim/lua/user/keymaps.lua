@@ -46,9 +46,11 @@ k("n", "<leader>w", ":wq<CR>", opts)
 k("n", "<leader>q", ":q!<CR>", opts)
 
 -- file explorer
-k("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-k("n", "<leader>o", ":NvimTreeFocus<CR>", opts)
-k("n", "<leader>t", ":NvimTreeRefresh<CR>", opts)
+--[[ k("n", "<leader>e", ":NvimTreeToggle<CR>", opts) ]]
+--[[ k("n", "<leader>o", ":NvimTreeFocus<CR>", opts) ]]
+--[[ k("n", "<leader>t", ":NvimTreeRefresh<CR>", opts) ]]
+--
+k("n", "<leader>e", ":Lexplore 30<CR>", opts)
 
 -- source current file
 k("n", "<leader>r", ":so %<CR>" ,{silent = false})
@@ -63,3 +65,13 @@ k("n", "<C-p>", "<cmd>lua require('telescope.builtin').grep_string({ search = vi
 k("n", "<leader>b", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 k("n", "<leader>p", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 k("n", "<F8>", "<cmd> lua require('telescope.builtin').treesitter()<cr>", opts)
+
+-- competetive keymaps
+k("n", "<F2>", ':w <CR> :!g++ -std=c++17 -Wshadow -Wall -o a "%" -O2 -Wno-unused-result <CR>', { noremap = true, silent = false })
+k("n", "<F3>", ':w <CR> :!g++ -std=c++17 -Wshadow -Wall -o a "%" -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG <CR>', { noremap = true, silent = false })
+k("n", "<F4>", ':w <CR> :!g++ -o a "%" -s <CR>', { noremap = true, silent = false })
+k("n", "<F5>", ':w <CR> :!g++ -o a "%" -g <CR>', { noremap = true, silent = false })
+
+-- inputless
+k("n", "<F9>", ':w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wshadow -Wextra -DONPC -O2 -o %< % && time ./%< < in <CR>', { noremap = true, silent = false })
+k("n", "<F10>", ':w <CR> :!g++ -fsanitize=address -std=c++17 -DONPC -O2 -o %< % && time ./%< < in <CR>', opts)
