@@ -1,6 +1,0 @@
-{
-"cmd" : ["g++ -std=c++14 -Wall $file_name -c $file_base_name"], 
-"selector" : "source.c",
-"shell": true,
-"working_dir" : "$file_path"
-}
