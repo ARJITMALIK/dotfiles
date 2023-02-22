@@ -25,7 +25,6 @@ packer.init {
   },
 }
 
-
 return packer.startup(function(use)
     -- packer
     use "wbthomason/packer.nvim"
@@ -33,28 +32,65 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
 
-    -- colorschemes
+    -- for discord
+    -- use 'andweeb/presence.nvim'
+
+    -- colorscheme
+    -- use "gruvbox-community/gruvbox"
+    use 'folke/tokyonight.nvim'
+    -- use 'tanvirtin/monokai.nvim'
     use 'navarasu/onedark.nvim'
+
+    -- LSP stuff
+    use 'hrsh7th/nvim-cmp'
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
+    use "jose-elias-alvarez/null-ls.nvim"
+
+    -- sources
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use "saadparwaiz1/cmp_luasnip"
+    use "hrsh7th/cmp-nvim-lua"
+    use "dcampos/cmp-snippy"
+
+    -- tree-sitter
+    use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
 
     -- icons
     use 'kyazdani42/nvim-web-devicons'
-    
+
     -- Telescope
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    
-    -- completions and intellisense
-    use {'neoclide/coc.nvim', branch = 'release'}
 
-    -- treesitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
+    --tabnine
+    -- use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+
+    -- snippet engine
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
+    use "dcampos/nvim-snippy"
+
+    -- autopairs
+    use "windwp/nvim-autopairs"
 
     --comment stuff
     use "numToStr/Comment.nvim"
     use 'JoosepAlviste/nvim-ts-context-commentstring'
 
-    -- for discord
-    use 'andweeb/presence.nvim'
+    --git stuff
+    -- use "lewis6991/gitsigns.nvim"
+
+    -- file manager
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      }
+    }
 
     -- statusline
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
@@ -76,9 +112,6 @@ return packer.startup(function(use)
       end
     }
 
-    -- autopairs
-    use 'jiangmiao/auto-pairs'
-    
   if packer_bootstrap then
     require('packer').sync()
   end

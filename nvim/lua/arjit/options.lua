@@ -26,22 +26,16 @@ v.backup = false
 v.timeoutlen = 500
 v.shortmess:append "c"
 v.cursorline = true
-v.mouse = "a"
+-- v.mouse = "a"
 v.showmode = false
 v.autoread = true
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
-vim.cmd[[
-""" Customize colors
-func! s:my_colors_setup() abort
-    " this is an example
-    " hi Pmenu guifg=#d7e5dc gui=NONE
-    hi PmenuSel guibg=#2a2f4f gui=NONE
-    hi PmenuSel guifg=#ffffff gui=NONE
-    " hi PmenuSbar guibg=#d7e5dc
-    " hi PmenuThumb guibg=#585858
-endfunc
+-- sorry for that but just can't figure out how to make cursorshape to always block
+-- any suggestions would be highly appriciated
 
-augroup colorscheme_coc_setup | au!
-    au ColorScheme * call s:my_colors_setup()
-augroup END
-]]
+-- vim.cmd[[set guicursor= ]]
+vim.cmd[[au CursorHold * checktime]]
+vim.cmd[[set guifont=Cascadia\ Code:h9]]
+vim.cmd[[let g:neovide_transparancy=0.1]]
