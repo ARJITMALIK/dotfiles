@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-PICTURE=/tmp/i3lock.png
+# PICTURE=/tmp/i3lock.png
+PICTURE=/home/arjit/Pictures/wall/oni.png
 SCREENSHOT="scrot $PICTURE"
 
-BLUR="30x20"
+# BLUR="30x20"
+BLUR="0x0"
 
 $SCREENSHOT
 convert $PICTURE -blur $BLUR $PICTURE

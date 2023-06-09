@@ -1,9 +1,15 @@
-local fn = vim.fn
-
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
+
+local packer_bootstrap = ensure_packer()
 
 vim.cmd([[
   augroup packer_user_config
@@ -12,105 +18,102 @@ vim.cmd([[
   augroup end
 ]])
 
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
+local status, packer = pcall(require, "packer")
+if not status then
+    return
 end
 
-packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-  },
-}
-
 return packer.startup(function(use)
-    -- packer
-    use "wbthomason/packer.nvim"
-    -- some required plugins
-    use "nvim-lua/popup.nvim"
-    use "nvim-lua/plenary.nvim"
+  -- packer related stuff
+  use 'wbthomason/packer.nvim'
+  use "nvim-lua/popup.nvim"
+  use "nvim-lua/plenary.nvim"
 
-    -- for discord
-    -- use 'andweeb/presence.nvim'
-
-    -- colorscheme
-    -- use "gruvbox-community/gruvbox"
-    use 'folke/tokyonight.nvim'
-    -- use 'tanvirtin/monokai.nvim'
-    use 'navarasu/onedark.nvim'
-
-    -- LSP stuff
-    use 'hrsh7th/nvim-cmp'
-    use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
-    use "jose-elias-alvarez/null-ls.nvim"
-
-    -- sources
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use "saadparwaiz1/cmp_luasnip"
-    use "hrsh7th/cmp-nvim-lua"
-    use "dcampos/cmp-snippy"
-
-    -- tree-sitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
-
-    -- icons
-    use 'kyazdani42/nvim-web-devicons'
-
-    -- Telescope
-    use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-
-    --tabnine
-    -- use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-
-    -- snippet engine
-    use "L3MON4D3/LuaSnip"
-    use "rafamadriz/friendly-snippets"
-    use "dcampos/nvim-snippy"
-
-    -- autopairs
-    use "windwp/nvim-autopairs"
-
-    --comment stuff
-    use "numToStr/Comment.nvim"
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
-
-    --git stuff
-    -- use "lewis6991/gitsigns.nvim"
-
-    -- file manager
-    use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      }
-    }
-
-    -- statusline
-    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-
-    -- startup screen
-    use {
-      'goolord/alpha-nvim',
-      requires = { 'kyazdani42/nvim-web-devicons' },
-      config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
+  -- discord
+  use 'andweeb/presence.nvim'
+  
+  -- theme of choice
+  use 'navarasu/onedark.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'folke/tokyonight.nvim'
+  
+  -- utils
+  use 'tpope/vim-surround'
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
       end
+  }
+
+  -- startup screen
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function ()
+      require'alpha'.setup(require'alpha.themes.startify'.config)
+    end
+  }
+
+	use 'theprimeagen/harpoon'
+
+  -- file explorer
+  use 'nvim-tree/nvim-tree.lua'
+
+  -- indent bracket
+  use "lukas-reineke/indent-blankline.nvim"
+
+  -- LSP stuff
+  use 'hrsh7th/nvim-cmp'
+  use 'neovim/nvim-lspconfig'
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    requires = {
+      {"nvim-tree/nvim-web-devicons"},
+      --Please make sure you install markdown and markdown_inline parser
+      {"nvim-treesitter/nvim-treesitter"}
     }
-    
-    -- colorizer
-    use {
-      'norcalli/nvim-colorizer.lua',
-      config = function ()
-        require 'colorizer'.setup()
-      end
-    }
+  })
+  use 'jose-elias-alvarez/typescript.nvim'
+  
+  -- treesitter
+  use 'nvim-treesitter/nvim-treesitter'
+
+  -- sources
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'saadparwaiz1/cmp_luasnip'
+
+  -- icons
+  use 'kyazdani42/nvim-web-devicons'
+
+  -- autopairs
+  use "windwp/nvim-autopairs"
+
+  -- snippets
+  use 'L3MON4D3/LuaSnip'
+  use 'rafamadriz/friendly-snippets'
+
+  -- Telescope
+  use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+  -- colorizer
+  use 'norcalli/nvim-colorizer.lua'
+
+
+  -- statusline
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+
+  -- lsp handler
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
+  -- linters and formatters
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'jayp0521/mason-null-ls.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

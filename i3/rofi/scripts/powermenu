@@ -1,0 +1,18 @@
+#! /bin/sh
+
+rofi_cmd() {
+	rofi -dmenu \
+		-theme ~/.config/i3/rofi/configs/power.rasi
+}
+
+chosen=$(printf "󰐥\n\n󰒲\n\n\n󰿅" | rofi_cmd)
+
+case "$chosen" in
+	"󰐥") systemctl poweroff ;;
+	"") systemctl reboot ;;
+	"󰒲") systemctl suspend ;;
+	"") systemctl hibernate ;;
+	"") ~/.config/i3/scripts/blur-lock ;;
+	"󰿅") i3-msg exit ;;
+	*) exit 1 ;;
+esac
