@@ -152,8 +152,8 @@ bindsym $mod+d exec discord
 bindsym $mod+x exec sh ~/.config/i3/rofi/scripts/powermenu
 
 # change wallpaper
-bindsym $mod+Next exec nitrogen --head=0 --random --set-zoom-fill
-bindsym $mod+Prior exec nitrogen --head=1 --random --set-zoom-fill
+bindsym Mod1+Shift+n exec nitrogen --head=0 --random --set-zoom-fill
+bindsym Mod1+Shift+p exec nitrogen --head=1 --random --set-zoom-fill
 
 # Lock the system
 # lock with a picture:
@@ -268,11 +268,6 @@ bindsym Print exec spectacle
 bindsym Mod1+w exec xdg-open https://web.whatsapp.com/
 bindsym Mod1+g exec xdg-open https://github.com/
 bindsym Mod1+y exec xdg-open https://www.youtube.com/
-
-bindsym Mod1+c exec /home/arjit/CLion/clion-2021.3.4/bin/clion.sh
-
-# Power Profiles menu switcher (rofi)
-bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -419,22 +414,22 @@ for_window [window_role="About"] floating enable
 # Define colors variables:
 set $darkbluetrans	#08052be6
 set $darkblue   		#08052b
-set $lightblue	  	#0063ff
-set $urgentred		  #e53935
+set $lightblue	  	#7aa2f7
+set $urgentred		  #f7768e
 set $white		      #ffffff
 set $black		      #000000
 set $purple		      #e345ff
-set $darkgrey		    #383c4a
-set $grey		        #b0b5bd
-set $mediumgrey		  #8b8b8b
+set $darkgrey		    #414868
+set $grey		        #c0caf5
+set $mediumgrey		  #545c7e
 set $yellowbrown	  #e1b700
-set $brightgreen    #03fc0b 
+set $brightgreen    #9ece6a
 set $orange         #ff7700 
 
 # define colors for windows:
 #class		        	      border		    bground		  text		  indicator	  child_border
 client.focused		        $lightblue		$darkblue	  $white		$lightblue		  $lightblue
-client.unfocused	        $darkblue		  $darkblue	  $grey		  $lightblue		  $darkgrey
+client.unfocused	        $darkblue		  $darkblue	  $grey		  $lightblue		  $mediumgrey
 client.focused_inactive	  $darkblue		  $darkblue	  $grey		  $lightblue		  $black
 client.urgent		          $urgentred		$urgentred	$white		$lightblue		  $orange
 

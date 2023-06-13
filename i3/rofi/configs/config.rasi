@@ -1,6 +1,6 @@
 configuration {
-	display-drun: "󰣇";
-	display-clipboard: "󰣇";
+	display-drun: "";
+	display-clipboard: "󰅌";
 	drun-display-format: "{icon} {name}";
 	modi: "drun";
   show-icons: true;
@@ -65,7 +65,7 @@ entry {
 	text-color: @foreground;
 	placeholder-color: @foreground;
 	border-radius: 0;
-	placeholder: "Search...";
+	placeholder: " Search...";
 	blink: false;
 	padding: 4;
 }
