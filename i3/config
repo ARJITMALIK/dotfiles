@@ -406,6 +406,7 @@ for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [window_role="About"] floating enable
+for_window [class="spectacle"] floating enable
 
 ######################################
 # color settings for bar and windows #
@@ -429,8 +430,8 @@ set $orange         #ff7700
 # define colors for windows:
 #class		        	      border		    bground		  text		  indicator	  child_border
 client.focused		        $lightblue		$darkblue	  $white		$lightblue		  $lightblue
-client.unfocused	        $darkblue		  $darkblue	  $grey		  $lightblue		  $mediumgrey
-client.focused_inactive	  $darkblue		  $darkblue	  $grey		  $lightblue		  $black
+client.unfocused	        $grey		      $grey	      $grey		  $lightblue		  $grey
+client.focused_inactive	  $grey		  $grey	  $grey		  $lightblue		  $grey
 client.urgent		          $urgentred		$urgentred	$white		$lightblue		  $orange
 
 ############################################

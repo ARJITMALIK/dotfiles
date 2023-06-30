@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
 # PICTURE=/tmp/i3lock.png
-PICTURE=/home/arjit/Pictures/wall/oni.png
-SCREENSHOT="scrot $PICTURE"
-
-# BLUR="30x20"
-BLUR="0x0"
-
-$SCREENSHOT
-convert $PICTURE -blur $BLUR $PICTURE
-i3lock -i $PICTURE
-rm $PICTURE
+# PICTURE=/home/arjit/Pictures/wall/oni2.png
+# SCREENSHOT="scrot $PICTURE"
+#
+# # BLUR="30x20"
+# BLUR="0x0"
+#
+# $SCREENSHOT
+# convert $PICTURE -blur $BLUR $PICTURE
+# i3lock -i $PICTURE
+# rm $PICTURE
+# i3lock --nofork --image=/home/arjit/Pictures/wall/bleach.png -t
+betterlockscreen -l --off 120

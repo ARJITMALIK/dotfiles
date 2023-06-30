@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "coc-clangd": ">=0.24.0",
-    "coc-json": ">=1.6.1",
-    "coc-snippets": ">=3.1.1"
-  }
-}

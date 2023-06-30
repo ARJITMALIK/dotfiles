@@ -9,7 +9,7 @@ configuration {
 @import "~/.config/i3/rofi/themes/colors.rasi"
 
 * {
-	font: "JetbrainsMono Nerd Font 14";
+	font: "JetbrainsMono Nerd Font Bold 14";
 
 	background-color: @background;
 	separatorcolor: transparent;
@@ -31,43 +31,46 @@ window {
 mainbox {
 	background-color: @background;
 	children: [inputbar,listview];
-	padding: 10;
+	padding: 0;
 }
 
 listview {
 	scrollbar: false;
-	padding: 2 0;
+	padding: 2 10;
 	background-color: @background;
 	columns: 1;
-	lines: 5;
+	lines: 8;
 	margin: 8 0 0 0;
 }
 
 
 inputbar {
 	children: [prompt, entry];
-	background-color: @background-alt;
-	border-radius: 5;
-  border: 2;
+	background-color: @background;
+  background-image: url("~/Pictures/wall/horikita.jpg", width);
+  padding: 40px 60px 220px 60px;
+  border: 0 0 2 0;
 }
 
 prompt {
 	font: "JetbrainsMono Nerd Font 20";
 	background-color: @background;
-	text-color: @accent;
+	text-color: @green;
 	enabled: true;
-	border-radius: 5;
-	padding: -2 10 0 10;
+  border: 2 0 2 2;
+	border-radius: 5 0 0 5;
+	padding: 5 15 5 10;
 }
 
 entry {
-	background-color: transparent;
-	text-color: @foreground;
-	placeholder-color: @foreground;
-	border-radius: 0;
+	background-color: @background;
+	text-color: @green;
+	placeholder-color: @green;
+  border: 2 2 2 0;
+	border-radius: 0 5 5 0;
 	placeholder: " Search...";
-	blink: false;
-	padding: 4;
+	blink: true;
+	padding: 10 15 5 10;
 }
 
 element {
