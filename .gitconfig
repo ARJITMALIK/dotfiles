@@ -1,0 +1,17 @@
+[user]
+	name = ARJITMALIK
+	email = arjitmalik2001@gmail.com
+[core]
+	editor = nvim
+[safe]
+	directory = /run/media/arjit/CODE/invoila/webapp
+	directory = /run/media/arjit/CODE/invoila/mobileapp
+	directory = /run/media/arjit/CODE/dotfiles
+	directory = /run/media/arjit/CODE/iit/pharma/pharmacy
+	directory = /run/media/arjit/CODE/iit/newiit/pharmacy
+	directory = /run/media/arjit/CODE/iit/final/pharmacy
+	directory = /run/media/arjit/CODE/iit/seive/seive
+	directory = /run/media/arjit/CODE/iit/seive/seieve-backup/seive
+	directory = /run/media/arjit/CODE/portfolio
+	directory = /run/media/arjit/CODE/projects/okina
+	directory = /run/media/arjit/CODE/projects/confetti
